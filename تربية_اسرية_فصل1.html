@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏝️ جزيرة التربية الأسرية - الفصل الأول</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@400;600;700;900&display=swap');
+
+  :root {
+    --sky: #87CEEB;
+    --sea: #1a9fd4;
+    --sand: #f5d98e;
+    --grass: #4caf50;
+    --wood: #8B6914;
+    --warm: #FF8C42;
+    --pink: #FF6B9D;
+    --purple: #9B59B6;
+    --teal: #1abc9c;
+    --white: #fff;
+    --dark: #2c1810;
+    --card-bg: rgba(255,255,255,0.95);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background: linear-gradient(180deg, #87CEEB 0%, #b0e0f7 40%, #1a9fd4 70%, #0a6fa0 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    text-align: center;
+    padding: 30px 20px 10px;
+    position: relative;
+  }
+  .header h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 3px 3px 0 #0a5c7a, 0 0 30px rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+  .header p {
+    color: #e0f7ff;
+    font-size: 1.1rem;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .sun {
+    position: absolute;
+    top: 10px; left: 30px;
+    width: 70px; height: 70px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    box-shadow: 0 0 30px #FFD700, 0 0 60px rgba(255,215,0,0.4);
+    animation: pulse 3s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.08);} }
+
+  /* ===== ISLAND ===== */
+  .island-scene {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 20px 0;
+  }
+  .island {
+    background: linear-gradient(180deg, #f5d98e 0%, #e8c76d 50%, #c9a84c 100%);
+    border-radius: 50% 50% 40% 40% / 30% 30% 20% 20%;
+    padding: 40px 30px 30px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3), inset 0 -10px 20px rgba(0,0,0,0.1);
+    border: 3px solid #c9a84c;
+  }
+  .island::before {
+    content: '';
+    position: absolute;
+    top: -6px; left: 5%; right: 5%;
+    height: 20px;
+    background: linear-gradient(90deg, #7dc56e, #4caf50, #7dc56e);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+  .palm-tree {
+    position: absolute;
+    top: -80px; right: 30px;
+    font-size: 80px;
+    animation: sway 4s ease-in-out infinite;
+    transform-origin: bottom center;
+  }
+  .palm-tree2 {
+    position: absolute;
+    top: -65px; left: 20px;
+    font-size: 65px;
+    animation: sway 5s ease-in-out infinite reverse;
+    transform-origin: bottom center;
+  }
+  @keyframes sway { 0%,100%{transform:rotate(-3deg);} 50%{transform:rotate(3deg);} }
+
+  .house-icon {
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 10px;
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.3));
+    animation: bounce 3s ease-in-out infinite;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+
+  .island-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #5c3a1e;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0 #f5d98e;
+  }
+
+  /* ===== NAVIGATION BUTTONS ===== */
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .nav-btn {
+    background: white;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    padding: 12px 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Cairo', sans-serif;
+  }
+  .nav-btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+  .nav-btn.active { border-color: var(--warm); background: linear-gradient(135deg, #fff5ee, #ffe0cc); transform: scale(1.05); }
+  .nav-btn .btn-icon { font-size: 28px; display: block; margin-bottom: 4px; }
+  .nav-btn .btn-label { font-size: 0.7rem; font-weight: 700; color: #333; line-height: 1.3; }
+
+  /* ===== CONTENT AREA ===== */
+  .content-area {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px 40px;
+  }
+
+  .section-card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    display: none;
+    animation: slideIn 0.4s ease;
+  }
+  .section-card.active { display: block; }
+  @keyframes slideIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px dashed #f0e0c8;
+  }
+  .section-header .icon { font-size: 40px; }
+  .section-header h2 { font-size: 1.5rem; font-weight: 900; color: #2c1810; }
+
+  /* Info boxes */
+  .info-box {
+    background: linear-gradient(135deg, #fff9f0, #fff3e0);
+    border: 2px solid #ffd699;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .info-box.blue { background: linear-gradient(135deg, #f0f8ff, #e0f2fe); border-color: #90cdf4; }
+  .info-box.green { background: linear-gradient(135deg, #f0faf4, #dcfce7); border-color: #86efac; }
+  .info-box.pink { background: linear-gradient(135deg, #fff0f6, #ffe0ef); border-color: #f9a8d4; }
+  .info-box.purple { background: linear-gradient(135deg, #faf0ff, #f3e8ff); border-color: #d8b4fe; }
+  .info-box.teal { background: linear-gradient(135deg, #f0fdfc, #ccfbf1); border-color: #5eead4; }
+
+  .info-box h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .info-box p, .info-box li {
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.7;
+  }
+  .info-box ul { padding-right: 20px; }
+  .info-box li { margin-bottom: 4px; }
+
+  .tip-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #FF8C42, #FF6B9D);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  /* Grid 2 cols */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media(max-width:600px){ .grid-2{grid-template-columns:1fr;} .nav-grid{grid-template-columns:repeat(3,1fr);} }
+
+  /* Scholar cards */
+  .scholar-card {
+    background: white;
+    border-radius: 14px;
+    padding: 14px;
+    border: 2px solid #e0d0ff;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .scholar-card .name { font-weight: 800; font-size: 0.95rem; color: #6b21a8; }
+  .scholar-card .quote { font-size: 0.82rem; color: #555; line-height: 1.6; font-style: italic; }
+
+  /* Type cards for parenting styles */
+  .style-card {
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .style-card.red { background: linear-gradient(135deg, #fff0f0, #ffe0e0); border: 2px solid #fca5a5; }
+  .style-card.yellow { background: linear-gradient(135deg, #fffbf0, #fff3c0); border: 2px solid #fcd34d; }
+  .style-card.gray { background: linear-gradient(135deg, #f5f5f5, #e5e5e5); border: 2px solid #d4d4d4; }
+  .style-card.green { background: linear-gradient(135deg, #f0faf4, #dcfce7); border: 2px solid #86efac; }
+  .style-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+  .style-card .effects { margin-top: 8px; padding-top: 8px; border-top: 1px dashed #ccc; }
+  .style-card .effects p { font-size: 0.78rem; color: #444; }
+
+  /* ===== QUIZ ===== */
+  #quiz-section .quiz-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .quiz-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .quiz-tab {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    background: white;
+    transition: all 0.2s;
+  }
+  .quiz-tab:hover { background: #fff0e0; border-color: #FF8C42; }
+  .quiz-tab.active { background: #FF8C42; color: white; border-color: #FF8C42; }
+
+  .quiz-container { display: none; }
+  .quiz-container.active { display: block; }
+
+  .q-card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 14px;
+    border: 2px solid #f0e0d0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .q-num { font-size: 0.72rem; font-weight: 800; color: #999; margin-bottom: 6px; }
+  .q-level {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    color: white;
+  }
+  .q-level.easy { background: #4caf50; }
+  .q-level.medium { background: #FF8C42; }
+  .q-level.hard { background: #e53935; }
+  .q-level.vhard { background: #6b21a8; }
+
+  .q-text { font-size: 0.9rem; font-weight: 700; color: #222; margin-bottom: 10px; line-height: 1.6; }
+
+  .tf-buttons { display: flex; gap: 10px; }
+  .tf-btn {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: 2px solid;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    background: white;
+  }
+  .tf-btn.true-btn { border-color: #4caf50; color: #4caf50; }
+  .tf-btn.false-btn { border-color: #e53935; color: #e53935; }
+  .tf-btn:hover { transform: scale(1.03); }
+  .tf-btn.selected-true { background: #4caf50; color: white; }
+  .tf-btn.selected-false { background: #e53935; color: white; }
+  .tf-btn.correct { background: #4caf50; color: white; border-color: #4caf50; }
+  .tf-btn.wrong { background: #e53935; color: white; border-color: #e53935; }
+
+  .mc-options { display: flex; flex-direction: column; gap: 8px; }
+  .mc-opt {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    background: white;
+    text-align: right;
+  }
+  .mc-opt:hover { border-color: #FF8C42; background: #fff5ee; }
+  .mc-opt.correct-ans { background: #dcfce7; border-color: #4caf50; color: #166534; font-weight: 700; }
+  .mc-opt.wrong-ans { background: #fee2e2; border-color: #e53935; color: #991b1b; }
+
+  .answer-reveal {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #f0fdf4;
+    border: 2px solid #86efac;
+    font-size: 0.82rem;
+    color: #166534;
+    font-weight: 700;
+    display: none;
+  }
+  .answer-reveal.show { display: block; }
+
+  .show-ans-btn {
+    margin-top: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(90deg, #6b21a8, #9B59B6);
+    color: white;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+  .show-ans-btn:hover { opacity: 0.85; transform: scale(1.03); }
+
+  .essay-q {
+    background: linear-gradient(135deg, #f8f0ff, #efe0ff);
+    border: 2px solid #c4b5fd;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .essay-q .q-text { color: #4c1d95; }
+
+  /* Score panel */
+  .score-panel {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    display: none;
+  }
+  .score-panel.show { display: block; }
+  .score-num { font-size: 3rem; font-weight: 900; }
+
+  /* ===== SUMMARY ===== */
+  .summary-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #f0e8ff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  .summary-item .bullet { font-size: 24px; flex-shrink: 0; }
+  .summary-item .text { font-size: 0.85rem; color: #333; line-height: 1.6; font-weight: 600; }
+
+  /* Tricks section */
+  .trick-box {
+    background: linear-gradient(135deg, #fff0f6, #ffe4f0);
+    border: 2px solid #f9a8d4;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+  .trick-box h3 { font-size: 0.95rem; font-weight: 800; color: #be185d; margin-bottom: 8px; }
+  .trick-box p { font-size: 0.85rem; color: #444; line-height: 1.7; }
+  .trick-box .memory { font-size: 1.1rem; font-weight: 900; color: #9d174d; letter-spacing: 2px; margin: 8px 0; display: block; text-align: center; background: white; padding: 8px; border-radius: 8px; }
+
+  /* domain cards */
+  .domain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .domain-card {
+    background: white;
+    border-radius: 14px;
+    padding: 14px 8px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .domain-card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+  .domain-card .d-icon { font-size: 28px; display: block; margin-bottom: 6px; }
+  .domain-card .d-name { font-size: 0.75rem; font-weight: 700; color: #333; }
+
+  /* Wave bottom */
+  .wave { text-align: center; font-size: 2rem; margin-top: 10px; opacity: 0.7; }
+
+  /* Floating bubbles */
+  .bubble {
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.15;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes floatUp {
+    from { transform: translateY(100vh) scale(0.5); opacity: 0.2; }
+    to   { transform: translateY(-100px) scale(1); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating bubbles -->
+<div class="bubble" style="width:60px;height:60px;background:#fff;left:5%;animation-duration:8s;animation-delay:0s;"></div>
+<div class="bubble" style="width:40px;height:40px;background:#87CEEB;left:20%;animation-duration:10s;animation-delay:2s;"></div>
+<div class="bubble" style="width:80px;height:80px;background:#fff;left:70%;animation-duration:7s;animation-delay:4s;"></div>
+<div class="bubble" style="width:30px;height:30px;background:#87CEEB;left:85%;animation-duration:9s;animation-delay:1s;"></div>
+
+<div class="header">
+  <div class="sun"></div>
+  <h1>🏝️ جزيرة التربية الأسرية</h1>
+  <p>الفصل الأول — د. دعاء عطا الله | استكشف وتعلّم واستمتع! 🌟</p>
+</div>
+
+<!-- ISLAND SCENE -->
+<div class="island-scene">
+  <div class="island">
+    <div class="palm-tree">🌴</div>
+    <div class="palm-tree2">🌴</div>
+    <div class="house-icon">🏡</div>
+    <div class="island-title">اختر القسم الي تبي تستذكره 👇</div>
+
+    <div class="nav-grid">
+      <button class="nav-btn active" onclick="showSection('intro')">
+        <span class="btn-icon">📖</span>
+        <span class="btn-label">المقدمة والتعريف</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('scholars')">
+        <span class="btn-icon">🧑‍🏫</span>
+        <span class="btn-label">العلماء والفلاسفة</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('importance')">
+        <span class="btn-icon">⭐</span>
+        <span class="btn-label">الأهمية والخصائص</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('functions')">
+        <span class="btn-icon">⚙️</span>
+        <span class="btn-label">الوظائف</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('domains')">
+        <span class="btn-icon">🎨</span>
+        <span class="btn-label">المجالات</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('family')">
+        <span class="btn-icon">👨‍👩‍👧‍👦</span>
+        <span class="btn-label">التربية الأسرية</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('styles')">
+        <span class="btn-icon">🔄</span>
+        <span class="btn-label">الأنماط والأساليب</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('special')">
+        <span class="btn-icon">💙</span>
+        <span class="btn-label">ذوو الاحتياجات</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('summary')">
+        <span class="btn-icon">⚡</span>
+        <span class="btn-label">ملخص سريع</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('tricks')">
+        <span class="btn-icon">🎯</span>
+        <span class="btn-label">تريكات التذكر</span>
+      </button>
+      <button class="nav-btn" onclick="showSection('quiz')">
+        <span class="btn-icon">🎮</span>
+        <span class="btn-label">الأسئلة (85 سؤال)</span>
+      </button>
+    </div>
+    <div class="wave">🌊🌊🌊</div>
+  </div>
+</div>
+
+<!-- CONTENT AREA -->
+<div class="content-area">
+
+  <!-- 1. INTRO -->
+  <div id="intro" class="section-card active">
+    <div class="section-header">
+      <span class="icon">📖</span>
+      <h2>المقدمة والتعريف</h2>
+    </div>
+    <div class="info-box">
+      <h3>🌱 التربية — المعنى اللغوي</h3>
+      <ul>
+        <li>من الفعل <strong>"ربا"</strong> = الارتفاع والنماء والزيادة</li>
+        <li>من الفعل <strong>"ربّ"</strong> = أصلح الشيء وقوّمه ورعاه</li>
+        <li>"رب الأب ولده" = رعاه وأحسن القيام عليه</li>
+      </ul>
+    </div>
+    <div class="info-box blue">
+      <h3>📌 التعريف الاصطلاحي</h3>
+      <p>السعي لإيجاد <strong>التغيير المطلوب</strong> في الفرد وإيصاله إلى <strong>التكامل التدريجي والمستمر</strong></p>
+    </div>
+    <div class="info-box green">
+      <h3>💡 التعريف البسيط</h3>
+      <p>التربية = <strong>عملية التكيف والتفاعل</strong> بين الفرد وبيئته المحيطة. هي الحياة نفسها! 🌍</p>
+    </div>
+    <div class="grid-2">
+      <div class="info-box pink">
+        <h3>🎯 التربية المقصودة</h3>
+        <p>تعليم منظم وعلمي وواعٍ — المدرسة، البرامج التعليمية</p>
+      </div>
+      <div class="info-box teal">
+        <h3>🌊 التربية غير المقصودة</h3>
+        <p>الخبرة المتضمنة في الحياة اليومية — العادات، التقاليد، المحيط</p>
+      </div>
+    </div>
+    <div class="info-box purple">
+      <h3>📝 ملاحظة مهمة</h3>
+      <p>التربية ظهرت مع ظهور الإنسان على الأرض. في المجتمعات البدائية كانت قائمة على <strong>التقليد والممارسة</strong>، بينما تطورت في العصر الحديث لتشمل <strong>بناء الإنسان الكامل</strong> خلقًا ودينًا ومواطنةً.</p>
+    </div>
+  </div>
+
+  <!-- 2. SCHOLARS -->
+  <div id="scholars" class="section-card">
+    <div class="section-header">
+      <span class="icon">🧑‍🏫</span>
+      <h2>الفلاسفة والعلماء — قالوا إيه؟</h2>
+    </div>
+    <div class="grid-2">
+      <div class="scholar-card">
+        <span class="name">🏛️ أفلاطون</span>
+        <span class="quote">التربية أساس بناء الدولة — تخلق الكمال الإنساني والاجتماعي، وتضفي على الجسم والنفس كل جمال وكمال ممكن</span>
+      </div>
+      <div class="scholar-card">
+        <span class="name">🎓 جون ديوي</span>
+        <span class="quote">التربية هي الحياة نفسها وليست إعدادًا للحياة — سمّي "فيلسوف الخبرة"</span>
+      </div>
+      <div class="scholar-card">
+        <span class="name">📚 جون لوك</span>
+        <span class="quote">العقل السليم في الجسم السليم — اهتم بالتربية الجسمية والعقلية والخلقية، ودعا للرحلات وحرية التفكير</span>
+      </div>
+      <div class="scholar-card">
+        <span class="name">🌿 روسو</span>
+        <span class="quote">التربية تستمد من ثلاثة مصادر: الطبيعة + الإنسان + الأشياء — كتابه الخالد "أميل"</span>
+      </div>
+      <div class="scholar-card">
+        <span class="name">🌱 بستالوتزي</span>
+        <span class="quote">الهدف من التربية هو "النمو" — الطفل محور الاهتمام، يمنح لكل الأطفال فرصًا متكافئة</span>
+      </div>
+      <div class="scholar-card">
+        <span class="name">⚡ هربرت سبنسر</span>
+        <span class="quote">التربية هي إعداد الفرد ليحيى حياة كاملة</span>
+      </div>
+      <div class="scholar-card">
+        <span class="name">🏺 أرسطو</span>
+        <span class="quote">التربية الجسمية تبتدئ قبل الولادة — اهتم بالزواج الصحيح ورعاية الحامل والألعاب</span>
+      </div>
+      <div class="scholar-card">
+        <span class="name">🌙 الغزالي</span>
+        <span class="quote">ربط صحة الطفل الجسمية بالنفسية والعقلية — التربية الإسلامية تبني إنسانًا مؤمنًا ملتزمًا مسؤولًا</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. IMPORTANCE -->
+  <div id="importance" class="section-card">
+    <div class="section-header">
+      <span class="icon">⭐</span>
+      <h2>الأهمية والخصائص</h2>
+    </div>
+    <div class="info-box green">
+      <h3>💎 أهمية التربية للفرد والمجتمع</h3>
+      <ul>
+        <li>📜 تُسهم في استمرار ونقل <strong>التراث الثقافي</strong></li>
+        <li>🧭 تحدد <strong>الاتجاهات السلوكية</strong> للأفراد</li>
+        <li>🧠 تُسهم في <strong>النمو العقلي والجسماني والاجتماعي</strong></li>
+        <li>🗣️ تساعد على اكتساب <strong>اللغة</strong> وأساليب الكلام</li>
+        <li>🚀 دور في <strong>التطور والمستقبل</strong> — سياسية، اجتماعية، اقتصادية</li>
+        <li>⚖️ تساعد في التخلص من <strong>الفوارق بين الطبقات</strong></li>
+      </ul>
+    </div>
+    <div class="info-box purple">
+      <h3>🔑 خصائص التربية — كلمة المفتاح: (إن تي ا ش ف م م م)</h3>
+      <div class="grid-2">
+        <ul>
+          <li>🧬 <strong>إنسانية</strong> — مكتسبة</li>
+          <li>🤝 <strong>تعاونية</strong> — اجتماعية</li>
+          <li>🌐 <strong>اجتماعية شاملة</strong></li>
+          <li>🌊 <strong>مرنة</strong></li>
+        </ul>
+        <ul>
+          <li>♾️ <strong>مستمرة</strong></li>
+          <li>🔗 <strong>معقدة</strong></li>
+          <li>📐 <strong>مضبوطة</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="info-box blue">
+        <h3>🎯 تستمد من فلسفة المجتمع</h3>
+        <p>خصائصها ومبادئها وأساسها ووظائفها كلها من فلسفة المجتمع</p>
+      </div>
+      <div class="info-box pink">
+        <h3>👥 فردية واجتماعية</h3>
+        <p>تهتم بالفرد والمجتمع معًا — تشاركية لا تختص بالمدرسة وحدها</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. FUNCTIONS -->
+  <div id="functions" class="section-card">
+    <div class="section-header">
+      <span class="icon">⚙️</span>
+      <h2>وظائف التربية — 6 وظائف</h2>
+    </div>
+    <div class="info-box">
+      <h3>1️⃣ نقل التراث الثقافي</h3>
+      <p>تشكيل الأفراد وتحقيق الاستمرار بين الأجيال — كل جيل يبدأ من حيث انتهى السابق، يضيف ويطور</p>
+    </div>
+    <div class="info-box blue">
+      <h3>2️⃣ ضرورة اجتماعية</h3>
+      <p>بقاء المجتمع يعتمد على التربية — الحياة الإنسانية تستمر رغم اختفاء الأفراد بالموت عبر انتقال التراث</p>
+    </div>
+    <div class="info-box green">
+      <h3>3️⃣ عملية تطبيع اجتماعي</h3>
+      <p>جيل الكبار يرسّخ المعارف والمهارات في جيل الصغار — جعلهم أعضاء فاعلين في المجتمع</p>
+    </div>
+    <div class="info-box pink">
+      <h3>4️⃣ وسيلة للتكيف الاجتماعي</h3>
+      <p>تكسب الإنسان الصفات والمهارات للاندماج — تغيير البيئة لتناسب الفرد أو تغيير الفرد ليناسب البيئة</p>
+    </div>
+    <div class="info-box purple">
+      <h3>5️⃣ عملية نمو للفرد الإنساني</h3>
+      <p>الطفل يولد ضعيفًا — التربية توظف الوسائل لتحقيق النمو جسمانيًا وعقليًا واجتماعيًا</p>
+    </div>
+    <div class="info-box teal">
+      <h3>6️⃣ وسيلة للتمييز (الهوية)</h3>
+      <p>تحقيق الهوية القومية — ما يميز مجتمعًا عن آخر من عادات وتقاليد ومعتقدات تناقلتها الأجيال</p>
+    </div>
+  </div>
+
+  <!-- 5. DOMAINS -->
+  <div id="domains" class="section-card">
+    <div class="section-header">
+      <span class="icon">🎨</span>
+      <h2>مجالات التربية — 9 مجالات</h2>
+    </div>
+    <div class="domain-grid">
+      <div class="domain-card"><span class="d-icon">💪</span><span class="d-name">الجسمية</span></div>
+      <div class="domain-card"><span class="d-icon">🧠</span><span class="d-name">العقلية</span></div>
+      <div class="domain-card"><span class="d-icon">🤝</span><span class="d-name">الاجتماعية</span></div>
+      <div class="domain-card"><span class="d-icon">🎨</span><span class="d-name">الجمالية</span></div>
+      <div class="domain-card"><span class="d-icon">🌿</span><span class="d-name">البيئية</span></div>
+      <div class="domain-card"><span class="d-icon">❤️</span><span class="d-name">الخلقية</span></div>
+      <div class="domain-card"><span class="d-icon">🕌</span><span class="d-name">الدينية</span></div>
+      <div class="domain-card"><span class="d-icon">💞</span><span class="d-name">الجنسية</span></div>
+      <div class="domain-card"><span class="d-icon">✈️</span><span class="d-name">السياحية</span></div>
+    </div>
+    <div class="grid-2">
+      <div class="info-box">
+        <h3>💪 الجسمية</h3>
+        <p>وعي الطفل بالعادات الصحية في المأكل والملبس والرياضة — الوقاية من الأمراض</p>
+      </div>
+      <div class="info-box blue">
+        <h3>🧠 العقلية</h3>
+        <p>اكتساب المعلومات ونضج العقل — تدريب الطفل على التفكير وربط الأفكار وحب الاستكشاف</p>
+      </div>
+      <div class="info-box green">
+        <h3>🤝 الاجتماعية</h3>
+        <p>تنمية الذكاء الاجتماعي — بناء علاقات سوية، التعاون، الإيثار، النظام</p>
+      </div>
+      <div class="info-box pink">
+        <h3>🎨 الجمالية</h3>
+        <p>تنمية القدرة على ملاحظة الجمال وتذوقه وإنتاجه — الموسيقى، الفنون، الذوق الرفيع</p>
+      </div>
+      <div class="info-box teal">
+        <h3>🌿 البيئية</h3>
+        <p>وعي الفرد بالموارد وكيفية استغلالها بدون إهدار — حماية البيئة المادية والمعنوية</p>
+      </div>
+      <div class="info-box purple">
+        <h3>❤️ الخلقية</h3>
+        <p>اكتساب المبادئ التي توجه السلوك — بالقدوة والتدريب لا بالتلقين!</p>
+      </div>
+      <div class="info-box">
+        <h3>🕌 الدينية</h3>
+        <p>تربية وجدان الطفل — الدين وجدان وعمل قبل أن يكون مناسك. الطفل يفهم المادي ثم المعنوي</p>
+      </div>
+      <div class="info-box blue">
+        <h3>💞 الجنسية & ✈️ السياحية</h3>
+        <p><strong>الجنسية:</strong> فهم الطبيعة البيولوجية وإعداد للحياة العائلية<br><strong>السياحية:</strong> الوعي بالسياحة محليًا وعالميًا</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. FAMILY EDU -->
+  <div id="family" class="section-card">
+    <div class="section-header">
+      <span class="icon">👨‍👩‍👧‍👦</span>
+      <h2>التربية الأسرية — التعريف والأهداف</h2>
+    </div>
+    <div class="info-box green">
+      <h3>📌 تعريف التربية الأسرية</h3>
+      <p>مجموعة <strong>السلوكيات والقيم والأخلاق</strong> التي تغرسها الأسرة في نفوس أبنائها — الأسرة هي النواة الأولى للإنسان في حياته الهادئة أو المضطربة</p>
+    </div>
+    <div class="info-box blue">
+      <h3>🎯 أهداف التربية الأسرية — مختصرة</h3>
+      <ul>
+        <li>توعية المقبلين على الزواج بأدوارهم من الخطوبة ← الزواج ← الإنجاب</li>
+        <li>توعية الأسرة باختلاف الأجيال وخصائص كل مرحلة عمرية</li>
+        <li>توعية الآباء والأمهات بأدوارهم المتغيرة مع نمو الأبناء</li>
+        <li>تشجيع حرية التعبير والحوار مع احترام الكبير وبر الوالدين</li>
+        <li>مساعدة الأسرة في إشباع حاجات الطفل الفطرية والمكتسبة</li>
+        <li>دعم الانتماء ونمو الهوية الاجتماعية للطفل</li>
+        <li>توعية الأسرة بأهمية وقت الفراغ والبيئة الصحية</li>
+        <li>التوعية بسلبيات التربية الخاطئة وعواقبها</li>
+      </ul>
+    </div>
+    <div class="grid-2">
+      <div class="info-box pink">
+        <h3>⚙️ وظائف التربية الأسرية</h3>
+        <ul>
+          <li>📜 نقل التراث الثقافي (بالتعليم لا الوراثة)</li>
+          <li>🔄 نقل الأنماط السلوكية (التأثير المباشر)</li>
+          <li>🌱 عملية نمو للطفل</li>
+        </ul>
+      </div>
+      <div class="info-box purple">
+        <h3>🔍 العوامل المؤثرة في التربية الأسرية</h3>
+        <ul>
+          <li>👴 عمر الوالدين</li>
+          <li>🏥 الوضع الصحي للوالدين</li>
+          <li>📚 المستوى التعليمي للوالدين</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. STYLES -->
+  <div id="styles" class="section-card">
+    <div class="section-header">
+      <span class="icon">🔄</span>
+      <h2>أنماط وأساليب التربية الأسرية</h2>
+    </div>
+    <div class="style-card red">
+      <h3>🔴 التربية السلطوية — "افعل ما أقول!"</h3>
+      <p>سلطة مطلقة للأهل ← حوار محدود + شدة + عقاب</p>
+      <div class="effects">
+        <p>⚠️ <strong>آثارها:</strong> ضعف الثقة بالنفس، سلوك عدواني خارج المنزل، صعوبات اجتماعية، قلق واكتئاب، خوف وخجل من الآخرين</p>
+      </div>
+    </div>
+    <div class="style-card yellow">
+      <h3>🟡 التربية المتساهلة — "افعل ما تريد!"</h3>
+      <p>قوانين معدومة ← الأهل كالأصدقاء + عطف بلا توجيه</p>
+      <div class="effects">
+        <p>⚠️ <strong>آثارها:</strong> تدني الإنجاز، قرارات سيئة، ضعف إدارة الوقت، أكثر عرضة للفشل الأكاديمي</p>
+      </div>
+    </div>
+    <div class="style-card gray">
+      <h3>⚫ التربية المبتعدة (الإهمال) — "أنا مشغول!"</h3>
+      <p>لا اهتمام + لا توقعات + لا تعبير عن المشاعر</p>
+      <div class="effects">
+        <p>⚠️ <strong>آثارها:</strong> توتر وقلق مرتفع، ابتعاد عاطفي، ضعف أكاديمي ومهني، خطر الانحراف</p>
+      </div>
+    </div>
+    <div class="style-card green">
+      <h3>🟢 التربية المعتدلة (الحازمة) ✅ الأفضل!</h3>
+      <p>قواعد واضحة + ديمقراطية + دفء وحب + مرونة عند الفشل</p>
+      <div class="effects">
+        <p>✅ <strong>آثارها:</strong> مسؤولية + تعاطف + ثقة بالنفس + نجاح أكاديمي + علاقات اجتماعية ناجحة</p>
+      </div>
+    </div>
+    <div class="info-box blue">
+      <h3>🛠️ أساليب التربية الأسرية السليمة</h3>
+      <div class="grid-2">
+        <ul>
+          <li>🧭 التربية بالتوجيه (الحوار والثقة)</li>
+          <li>👀 التربية بالملاحظة والمتابعة</li>
+        </ul>
+        <ul>
+          <li>🌟 التربية بالقدوة (افعل ما تقول!)</li>
+          <li>⚖️ العقاب المناسب (بدون ضرب مبرّح)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-box green">
+      <h3>🌈 آثار التربية السليمة على الطفل</h3>
+      <p>تفاعل جيد مع الآخرين ✦ عدم عدوانية ✦ تعاطف ✦ حسن التصرف مع المشكلات ✦ علاقات سليمة ✦ نجاح علمي وعملي ✦ تفكير منطقي ✦ ضبط العواطف والرغبات</p>
+    </div>
+  </div>
+
+  <!-- 8. SPECIAL NEEDS -->
+  <div id="special" class="section-card">
+    <div class="section-header">
+      <span class="icon">💙</span>
+      <h2>الأطفال ذوو الاحتياجات الخاصة</h2>
+    </div>
+    <div class="info-box blue">
+      <h3>📌 التعريف</h3>
+      <p>المصطلح يشمل نسبة كبيرة من الأفراد. تصنفهم منظمة الصحة العالمية بأنهم من أكثر الفئات تهميشًا في العالم. المجتمع المحيط يُعيق أحيانًا ذوي الاحتياجات الخاصة بدون قصد.</p>
+    </div>
+    <div class="info-box green">
+      <h3>🔍 خصائصهم — ما الذي يُصنّف الطفل ذا احتياجات خاصة؟</h3>
+      <ul>
+        <li>🦿 صعوبات في الحركة والقيام بالأنشطة</li>
+        <li>🗣️ صعوبة النطق أو تأخر الكلام</li>
+        <li>👕 يستغرق اكتساب المهارات العادية وقتًا طويلًا</li>
+        <li>🧩 صعوبة تذكر الأشياء والأحداث</li>
+        <li>📋 عدم القدرة على تنفيذ الأشياء بتسلسل منظم</li>
+        <li>😤 نوبات غضب مفاجئة وسلوكيات غير متوقعة</li>
+        <li>🧮 يتطلب مجهودًا للتفكير بطريقة منطقية</li>
+        <li>⚡ قد ترتبط بمشكلات صحية أخرى كاضطرابات المزاج والتشنجات</li>
+      </ul>
+    </div>
+    <div class="info-box pink">
+      <h3>⚠️ واقعهم الاجتماعي</h3>
+      <p>اعتلال في الصحة ✦ نقص في التحصيل العلمي ✦ انخفاض الدخل بسبب قلة العمل ✦ ارتفاع معدلات الفقر والبطالة والتدهور النفسي</p>
+    </div>
+  </div>
+
+  <!-- 9. SUMMARY -->
+  <div id="summary" class="section-card">
+    <div class="section-header">
+      <span class="icon">⚡</span>
+      <h2>الملخص السريع — كل حاجة في جملة!</h2>
+    </div>
+    <div class="summary-item"><span class="bullet">📖</span><span class="text">التربية = رعاية + تفاعل الفرد مع بيئته في كل مراحل حياته</span></div>
+    <div class="summary-item"><span class="bullet">🌊</span><span class="text">ديوي: التربية = الحياة نفسها = الخبرة الاجتماعية (مقصودة وغير مقصودة)</span></div>
+    <div class="summary-item"><span class="bullet">🏛️</span><span class="text">أفلاطون: التربية أساس الدولة. روسو: من الطبيعة + الإنسان + الأشياء</span></div>
+    <div class="summary-item"><span class="bullet">🔑</span><span class="text">خصائص التربية: إنسانية، مكتسبة، تعاونية، اجتماعية، شاملة، مرنة، مستمرة، معقدة، مضبوطة</span></div>
+    <div class="summary-item"><span class="bullet">⚙️</span><span class="text">6 وظائف: نقل التراث + ضرورة اجتماعية + تطبيع اجتماعي + تكيف + نمو + تمييز (هوية)</span></div>
+    <div class="summary-item"><span class="bullet">🎨</span><span class="text">9 مجالات: جسمية + عقلية + اجتماعية + جمالية + بيئية + خلقية + دينية + جنسية + سياحية</span></div>
+    <div class="summary-item"><span class="bullet">👨‍👩‍👧</span><span class="text">التربية الأسرية = قيم وسلوكيات وأخلاق تغرسها الأسرة — الأسرة النواة الأولى</span></div>
+    <div class="summary-item"><span class="bullet">🔴🟡⚫🟢</span><span class="text">4 أنماط: سلطوية (سيئة) + متساهلة (سيئة) + إهمال (أسوأ) + معتدلة حازمة ✅ (الأفضل)</span></div>
+    <div class="summary-item"><span class="bullet">🛠️</span><span class="text">أساليب التربية: التوجيه + الملاحظة + القدوة + العقاب المناسب</span></div>
+    <div class="summary-item"><span class="bullet">💙</span><span class="text">ذوو الاحتياجات: صعوبات حركة + نطق + تذكر + سلوك — من أكثر الفئات تهميشًا</span></div>
+    <div class="summary-item"><span class="bullet">🔍</span><span class="text">عوامل مؤثرة في التربية الأسرية: عمر الوالدين + صحتهم + مستواهم التعليمي</span></div>
+  </div>
+
+  <!-- 10. TRICKS -->
+  <div id="tricks" class="section-card">
+    <div class="section-header">
+      <span class="icon">🎯</span>
+      <h2>تريكات وحيل التذكر 🧙‍♀️</h2>
+    </div>
+    <div class="trick-box">
+      <h3>🎯 تريكة: خصائص التربية (9 خصائص)</h3>
+      <p>تذكّر جملة: <strong>"إنتِ ا شا فِ مِم مِم"</strong></p>
+      <span class="memory">إ — ت — ا — ش — ش — ف — م — م — م</span>
+      <p>إنسانية ✦ تعاونية ✦ اجتماعية ✦ شاملة ✦ (شيء آخر) ✦ فردية ✦ مرنة ✦ مستمرة ✦ مضبوطة</p>
+    </div>
+    <div class="trick-box">
+      <h3>🎯 تريكة: وظائف التربية (6 وظائف)</h3>
+      <p>تذكّر: <strong>"نَضَ تَنَ نَ"</strong></p>
+      <span class="memory">ن — ض — ت — تك — ن — ت</span>
+      <p>نقل التراث ✦ ضرورة اجتماعية ✦ تطبيع اجتماعي ✦ تكيف اجتماعي ✦ نمو ✦ تمييز</p>
+    </div>
+    <div class="trick-box">
+      <h3>🎯 تريكة: مجالات التربية (9 مجالات)</h3>
+      <p>تذكّر: <strong>"جِع اج بِيخ دِس"</strong></p>
+      <span class="memory">ج — ع — ا — ج — ب — خ — د — ج — س</span>
+      <p>جسمية ✦ عقلية ✦ اجتماعية ✦ جمالية ✦ بيئية ✦ خلقية ✦ دينية ✦ جنسية ✦ سياحية</p>
+    </div>
+    <div class="trick-box">
+      <h3>🎯 تريكة: الأنماط التربوية الأربعة</h3>
+      <span class="memory">سلطة 🔴 | تساهل 🟡 | إهمال ⚫ | حزم 🟢</span>
+      <p>الأفضل دايمًا = <strong>الحازم المعتدل</strong> (قواعد + حب + مرونة)</p>
+    </div>
+    <div class="trick-box">
+      <h3>🎯 تريكة: مصادر التربية عند روسو</h3>
+      <span class="memory">الطبيعة 🌿 + الإنسان 👤 + الأشياء 📦</span>
+      <p>لو اختلفت ← تربية سيئة | لو توافقت ← فرد سوي سعيد</p>
+    </div>
+    <div class="trick-box">
+      <h3>🎯 تريكة: أساس التربية الدينية عند الأطفال</h3>
+      <span class="memory">وجدان أولًا 💓 ← عقيدة ثانيًا 🧠 ← مادي ثالثًا 👁️</span>
+      <p>الطفل لا يفهم المعنويات (الأمانة، الوفاء) مباشرة — يحتاج أن يراها ملموسة أولًا</p>
+    </div>
+  </div>
+
+  <!-- 11. QUIZ -->
+  <div id="quiz" class="section-card">
+    <div class="section-header">
+      <span class="icon">🎮</span>
+      <h2>الأسئلة — 85 سؤال تفاعلي</h2>
+    </div>
+    <div class="quiz-header">
+      <p style="color:#666;font-size:0.85rem;">اضغط على الإجابة ← ستظهر الصواب فورًا! مستوى: سهل 🟢 متوسط 🟡 صعب 🔴 صعب جدًا 🟣</p>
+    </div>
+    <div class="quiz-tabs">
+      <button class="quiz-tab active" onclick="showQuiz('tf')">✅ صح وغلط (25)</button>
+      <button class="quiz-tab" onclick="showQuiz('mc')">🔘 اختياري (25)</button>
+      <button class="quiz-tab" onclick="showQuiz('essay')">📝 مقالي (10)</button>
+      <button class="quiz-tab" onclick="showQuiz('bonus')">⭐ تحدي (25)</button>
+    </div>
+
+    <!-- TRUE/FALSE -->
+    <div id="tf-quiz" class="quiz-container active"></div>
+    <!-- MULTIPLE CHOICE -->
+    <div id="mc-quiz" class="quiz-container"></div>
+    <!-- ESSAY -->
+    <div id="essay-quiz" class="quiz-container"></div>
+    <!-- BONUS -->
+    <div id="bonus-quiz" class="quiz-container"></div>
+  </div>
+
+</div><!-- end content-area -->
+
+<script>
+// ===== NAVIGATION =====
+function showSection(id) {
+  document.querySelectorAll('.section-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['intro','scholars','importance','functions','domains','family','styles','special','summary','tricks','quiz'];
+  const btns = document.querySelectorAll('.nav-btn');
+  const i = idx.indexOf(id);
+  if(i >= 0) btns[i].classList.add('active');
+  document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// ===== QUIZ TABS =====
+function showQuiz(type) {
+  document.querySelectorAll('.quiz-container').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.quiz-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(type+'-quiz').classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ===== TRUE/FALSE DATA =====
+const tfQuestions = [
+  {q:'التربية تعني عملية التكيف والتفاعل بين الفرد وبيئته المحيطة.', ans:true, level:'easy'},
+  {q:'جون ديوي يرى أن التربية إعداد للحياة وليست الحياة نفسها.', ans:false, level:'easy'},
+  {q:'أفلاطون يرى أن التربية أساس بناء الدولة والمحافظة عليها.', ans:true, level:'easy'},
+  {q:'كلمة "تربية" مشتقة من الفعل "ربا" الذي يعني الانخفاض والنقصان.', ans:false, level:'easy'},
+  {q:'التربية المقصودة هي الخبرة العلمية المنظمة والمتعمدة.', ans:true, level:'easy'},
+  {q:'ظهرت التربية بعد ظهور الإنسان على الأرض بعصور طويلة.', ans:false, level:'easy'},
+  {q:'هربرت سبنسر يرى أن التربية هي إعداد الفرد ليحيى حياة كاملة.', ans:true, level:'easy'},
+  {q:'التربية الجسمية عند أرسطو تبتدئ بعد ولادة الطفل فقط.', ans:false, level:'medium'},
+  {q:'روسو يرى أن التربية تستمد من ثلاثة مصادر: الطبيعة والإنسان والأشياء.', ans:true, level:'easy'},
+  {q:'الأسرة هي المؤسسة الوحيدة المسؤولة عن التربية.', ans:false, level:'easy'},
+  {q:'التربية الخلقية تتم بالقدوة والتدريب لا بالتلقين فقط.', ans:true, level:'medium'},
+  {q:'التربية المتساهلة تعطي الآباء سلطة مطلقة على الأبناء.', ans:false, level:'medium'},
+  {q:'التربية المعتدلة (الحازمة) تُعدّ النمط الأفضل في التربية الأسرية.', ans:true, level:'easy'},
+  {q:'مجالات التربية تشمل 6 مجالات فقط.', ans:false, level:'medium'},
+  {q:'التربية البيئية تعني وعي الفرد بالموارد وكيفية استغلالها والحفاظ عليها.', ans:true, level:'medium'},
+  {q:'جون لوك يرى أن الرحلات وسيلة هامة في التربية خلال الطفولة المبكرة.', ans:true, level:'medium'},
+  {q:'الطفل ذو الاحتياجات الخاصة يتميز دائمًا بمستوى ذكاء منخفض.', ans:false, level:'medium'},
+  {q:'التربية الدينية عند الأطفال تعتمد على الوجدان قبل المناسك والطقوس.', ans:true, level:'hard'},
+  {q:'التربية الجمالية غاية في حد ذاتها.', ans:false, level:'hard'},
+  {q:'منظمة الصحة العالمية تصنف ذوي الإعاقة من أكثر الفئات تهميشًا في العالم.', ans:true, level:'medium'},
+  {q:'بستالوتزي يرى أن الهدف من التربية هو النمو، والطفل محور الاهتمام.', ans:true, level:'hard'},
+  {q:'التربية المبتعدة (الإهمال) تُنتج أطفالًا يتمتعون بثقة عالية بالنفس.', ans:false, level:'hard'},
+  {q:'الذكاء الاجتماعي هو قدرة الفرد على بناء علاقات اجتماعية سوية مع من يتعامل معهم.', ans:true, level:'hard'},
+  {q:'التراث الثقافي ينتقل بالوراثة البيولوجية من الآباء إلى الأبناء.', ans:false, level:'hard'},
+  {q:'ديوي سُمّي "فيلسوف الخبرة" لأنه سمّى الحياة الاجتماعية بالخبرة.', ans:true, level:'vhard'},
+];
+
+// ===== MC DATA =====
+const mcQuestions = [
+  {q:'من الفيلسوف الذي قال "التربية هي الحياة نفسها وليست إعدادًا للحياة"؟', opts:['أفلاطون','جون ديوي','روسو','أرسطو'], ans:1, level:'easy'},
+  {q:'كم عدد مجالات التربية المذكورة في الكتاب؟', opts:['6','7','9','11'], ans:2, level:'easy'},
+  {q:'ما النمط التربوي الذي يُعدّ الأفضل والأكثر فعالية؟', opts:['السلطوي','المتساهل','المبتعد','المعتدل الحازم'], ans:3, level:'easy'},
+  {q:'التربية غير المقصودة عند جون ديوي تُسمى:', opts:['التعليم','الخبرة','الثقافة','الهوية'], ans:1, level:'medium'},
+  {q:'ما الفيلسوف الذي اهتم بتكافؤ الفرص التعليمية لجميع الأطفال؟', opts:['أفلاطون','روسو','بستالوتزي','أرسطو'], ans:2, level:'medium'},
+  {q:'التربية الخلقية تُكتسب عن طريق:', opts:['التلقين فقط','الحفظ والتكرار','القدوة والتدريب','العقاب المستمر'], ans:2, level:'easy'},
+  {q:'ما عدد مصادر التربية عند روسو؟', opts:['2','3','4','5'], ans:1, level:'easy'},
+  {q:'من أبرز ما أشار إليه الغزالي في تربية الطفل:', opts:['الفلسفة الدينية فقط','الربط بين الصحة الجسمية والنفسية والعقلية','الاهتمام بالتعليم النظري','التركيز على العقاب'], ans:1, level:'hard'},
+  {q:'التربية التي تهدف إلى تنمية قدرة الفرد على ملاحظة الجمال وإنتاجه هي:', opts:['البيئية','الجسمية','الجمالية','الاجتماعية'], ans:2, level:'easy'},
+  {q:'الأطفال الذين نشأوا في ظل التربية السلطوية يميلون إلى:', opts:['الثقة العالية بالنفس','القلق والاكتئاب','الإنجاز العالي','المهارات الاجتماعية الممتازة'], ans:1, level:'medium'},
+  {q:'عامل الوضع الصحي للوالدين يؤثر في أسلوب التربية بأن:', opts:['الوالد المريض يصبح أكثر لطفًا دائمًا','قد يلجأ من يعاني من إعاقة للشدة تعويضًا للنقص','لا يؤثر أبدًا في التربية','يجعل الوالد أكثر تساهلًا'], ans:1, level:'hard'},
+  {q:'ما الوظيفة التي تعني "تحقيق الهوية القومية للمجتمع"؟', opts:['نقل التراث','ضرورة اجتماعية','التمييز','التكيف'], ans:2, level:'hard'},
+  {q:'التربية الدينية تعتمد على أسس سيكولوجية، أولها:', opts:['الطقوس والمناسك','الدين وجدان وعمل قبل أن يكون مناسك','التعليم النظري','الحفظ'], ans:1, level:'hard'},
+  {q:'التربية الأسرية هي:', opts:['مجموعة الدروس المدرسية','مجموعة السلوكيات والقيم والأخلاق التي تغرسها الأسرة في أبنائها','برامج الدولة للأسرة فقط','التربية الدينية للأبناء'], ans:1, level:'easy'},
+  {q:'أي نمط تربوي يجعل الآباء أشبه بالأصدقاء لأبنائهم؟', opts:['السلطوي','المعتدل','المتساهل','المبتعد'], ans:2, level:'medium'},
+  {q:'ما خصيصة التربية التي تعني أنها ليست حكرًا على المدرسة وحدها؟', opts:['الاستمرارية','التشاركية','المرونة','الشمولية'], ans:1, level:'hard'},
+  {q:'التربية في المجتمعات البدائية كانت قائمة على:', opts:['الكتب والمناهج','التقليد والممارسة','المناقشة والحوار','الاختبارات والتقييم'], ans:1, level:'medium'},
+  {q:'ما التعريف الاصطلاحي للتربية؟', opts:['نقل الثقافة من جيل لآخر','السعي لإيجاد التغيير المطلوب في الفرد وإيصاله للتكامل التدريجي','إعداد الفرد للعمل','تعليم الطفل في المدرسة فقط'], ans:1, level:'medium'},
+  {q:'أي العلماء ربط بين سلامة الجسم وسلامة العقل؟', opts:['روسو','أفلاطون','جون لوك','ديوي'], ans:2, level:'vhard'},
+  {q:'التربية الجمالية "ليست غاية بل هي...":',opts:['مادة دراسية','وسيلة لبناء الشخصية وتكاملها','هدف ثانوي','نشاط ترفيهي'], ans:1, level:'hard'},
+  {q:'من الذي كتب كتاب "أميل" الذي يتحدث عن التربية؟', opts:['أفلاطون','ديوي','روسو','لوك'], ans:2, level:'easy'},
+  {q:'الهدف من التربية الاجتماعية هو:', opts:['الحصول على وظيفة','تنمية الذكاء الاجتماعي وبناء علاقات سوية','تعلم الرياضيات','اكتساب المهارات الجسمية'], ans:1, level:'medium'},
+  {q:'أيهم ليس من العوامل المؤثرة في التربية الأسرية؟', opts:['عمر الوالدين','المستوى التعليمي','لون البشرة','الوضع الصحي'], ans:2, level:'medium'},
+  {q:'التربية البيئية تشمل:', opts:['رعاية الطبيعة فقط','رعاية المصادر والصحة الجسمية والنفسية والبيئة الاجتماعية','تعليم الجغرافيا','السياحة الدولية'], ans:1, level:'hard'},
+  {q:'من أهداف التربية الأسرية: توعية الآباء بالاختلاف في التكوين بين مراحل العمر لأن:', opts:['كل الأعمار متشابهة في الاحتياجات','لكل مرحلة خصائصها واحتياجاتها الخاصة','الآباء يعرفون كل شيء تلقائيًا','الاحتياجات تتحدد بالجنس فقط'], ans:1, level:'vhard'},
+];
+
+// ===== ESSAY DATA =====
+const essayQuestions = [
+  {q:'ما المقصود بمفهوم التربية لغةً واصطلاحًا؟ وما الفرق بين التربية المقصودة وغير المقصودة؟',
+   ans:'لغةً: من "ربا" أي الارتفاع والنماء، أو من "ربّ" أي أصلح ورعى. اصطلاحًا: السعي لإيجاد التغيير المطلوب في الفرد وإيصاله للتكامل التدريجي. غير المقصودة: خبرة الحياة اليومية وعاداتها. المقصودة: تعليم منظم وعلمي واعٍ.', level:'easy'},
+  {q:'اذكر آراء ثلاثة من الفلاسفة في تعريف التربية مع ذكر اسم كل منهم.',
+   ans:'أفلاطون: أساس بناء الدولة، تنمي الفضيلة والمواطنة. جون ديوي: التربية هي الحياة نفسها وليست إعدادًا لها. روسو: تستمد من الطبيعة والإنسان والأشياء — كتابه "أميل". يمكن إضافة هربرت سبنسر: إعداد الفرد لحياة كاملة.', level:'medium'},
+  {q:'اشرح ست وظائف للتربية مع إعطاء مثال واحد على كل وظيفة.',
+   ans:'١) نقل التراث الثقافي: تعليم العادات والتقاليد للأجيال الجديدة. ٢) ضرورة اجتماعية: بدونها ينهار المجتمع. ٣) تطبيع اجتماعي: جعل الطفل عضوًا فاعلًا. ٤) التكيف الاجتماعي: تعلم كيف تتعامل مع البيئة. ٥) النمو: رعاية نمو الطفل جسميًا وعقليًا. ٦) التمييز: تحقيق الهوية القومية.', level:'medium'},
+  {q:'ما خصائص التربية؟ اذكرها مع شرح خاصيتين منها.',
+   ans:'إنسانية، مكتسبة، تعاونية، اجتماعية، شاملة، مرنة، مستمرة، معقدة، مضبوطة. الشمولية: تسعى للنمو في جميع النواحي الجسمية والعقلية والانفعالية والاجتماعية. الاستمرارية: لا تنتهي وتتغير بتغير المجتمعات والأزمنة.', level:'medium'},
+  {q:'اشرح مجالات التربية التسعة بإيجاز مع ذكر هدف كل مجال.',
+   ans:'جسمية: صحة الجسم وعاداته. عقلية: تنمية التفكير والمعرفة. اجتماعية: بناء علاقات سوية. جمالية: تذوق الجمال وإنتاجه. بيئية: الحفاظ على الموارد. خلقية: المبادئ الموجهة للسلوك. دينية: الوجدان والإيمان. جنسية: فهم الطبيعة البيولوجية. سياحية: الوعي المحلي والعالمي.', level:'hard'},
+  {q:'ما التربية الأسرية؟ وما أبرز أهدافها؟',
+   ans:'هي مجموعة السلوكيات والقيم والأخلاق التي تغرسها الأسرة في أبنائها. أبرز أهدافها: توعية المقبلين على الزواج، توعية الأسرة باختلاف الأجيال، تفهيم الآباء أدوارهم المتغيرة مع نمو الأبناء، مساعدة الأسرة في إشباع حاجات الطفل، دعم قيم الانتماء، مساعدة الأسرة في ضبط الميزانية.', level:'medium'},
+  {q:'قارن بين أنماط التربية الأسرية الأربعة من حيث الخصائص والآثار على الطفل.',
+   ans:'السلطوية: شدة وعقاب + لا حوار → قلق وضعف ثقة. المتساهلة: لا قواعد + عطف بلا توجيه → ضعف إنجاز ومسؤولية. المبتعدة: إهمال + لا مشاعر → توتر وانحراف. المعتدلة الحازمة: قواعد + دفء + مرونة → مسؤولية وثقة ونجاح. الأفضل: المعتدلة الحازمة.', level:'hard'},
+  {q:'ما أثر التربية السليمة على شخصية الطفل؟ اذكر ست آثار على الأقل.',
+   ans:'تفاعل جيد مع الآخرين، عدم عدوانية، تعاطف مع مشاعر الآخرين، حسن التصرف مع المشكلات، علاقات سليمة مع الأهل والأصدقاء، نجاح علمي وعملي، تفكير منطقي، القدرة على التعبير عن النفس، ضبط الرغبات والعواطف.', level:'hard'},
+  {q:'من هو الطفل ذو الاحتياجات الخاصة؟ وما أبرز خصائصه؟',
+   ans:'هو من تتوافر فيه مشكلات في هيكل الجسم أو وظائف أعضائه المختلفة تحول دون المشاركة الطبيعية في الحياة. خصائصه: صعوبات في الحركة، صعوبة النطق، يستغرق وقتًا طويلًا لاكتساب مهارات عادية، صعوبة التذكر، نوبات غضب، صعوبة التفكير المنطقي، قد تصحبه تشنجات أو اضطرابات مزاجية.', level:'hard'},
+  {q:'ما الفرق بين التربية الجسمية والعقلية؟ وكيف يمكن تحقيق كل منهما في الأسرة؟',
+   ans:'الجسمية: تهتم بالصحة والعادات الصحية (مأكل، ملبس، رياضة) وتحقق بتعويد الطفل على النظافة والرياضة والتغذية السليمة. العقلية: تهتم باكتساب المعرفة ونضج العقل والتفكير، وتحقق بتشجيع الاستكشاف والرحلات وحل المشكلات وإعطاء حرية التفكير للطفل. كلاهما ضروريان للنمو المتكامل.', level:'vhard'},
+];
+
+// ===== BONUS/CHALLENGE =====
+const bonusQuestions = [
+  {q:'ما الفيلسوف الذي أطلق على نظريته "الخبرة" ووصف بـ"فيلسوف الخبرة"؟', opts:['روسو','ديوي','لوك','بستالوتزي'], ans:1, level:'vhard'},
+  {q:'التربية المعتدلة تُسمى أيضًا:', opts:['التربية الديمقراطية','التربية الحرة','التربية الموثوقة','التربية المرنة'], ans:2, level:'vhard'},
+  {q:'ما أساس التربية الجمالية عند أرسطو؟', opts:['المتعة فقط','الأخلاق والطهارة الروحية والاهتمام بالفضيلة','الفنون البصرية','اللعب والترفيه'], ans:1, level:'vhard'},
+  {q:'ديكارت يرى أن التربية الجمالية مرتبطة بـ:', opts:['العواطف فقط','الإدراك العقلي','الطبيعة المحيطة','الدين'], ans:1, level:'vhard'},
+  {q:'من الذي كتب كتاب "الديمقراطية والتربية"؟', opts:['أفلاطون','روسو','جون ديوي','جون لوك'], ans:2, level:'vhard'},
+  {q:'ما البرنامج الجمالي الذي وضعه فريدريك فروبل للأطفال؟', opts:['الرسم فقط','الرقص والغناء والتمثيل والطبيعة واللعب','الرياضيات والموسيقى','القراءة والكتابة'], ans:1, level:'vhard'},
+  {q:'بستالوتزي يرى أن التربية العقلية تستلزم أن ترتبط الدروس بـ:', opts:['التلقين','الانسجام والوحدة','التحفيظ','الاختبارات'], ans:1, level:'vhard'},
+  {q:'التربية الجنسية تحتل مجالًا هامًا في إعداد الطفل لـ:', opts:['الحياة الأكاديمية','الحياة الاجتماعية والعائلية المستقبلية','الرياضة','المهنة'], ans:1, level:'vhard'},
+  {q:'ما النتيجة المباشرة لإشباع حاجة الطفل إلى الاستكشاف والمعرفة؟', opts:['يصبح أكثر انطواءً','تنمو قدراته وملكاته','يصبح اتكاليًا','يفضل اللعب على التعلم'], ans:1, level:'vhard'},
+  {q:'التربية الأسرية تتضمن مساعدة الأسرة على توعية الأبناء بـ:', opts:['الواجبات المدرسية فقط','الحقوق والواجبات والأدوار وطبيعة العلاقات مع الآخرين','التخصص المهني','الدين فقط'], ans:1, level:'vhard'},
+  {q:'الفرق الأساسي بين الخصيصة "الشاملة" و"الفردية الاجتماعية" في التربية هو:', opts:['لا فرق بينهما','الشاملة تغطي جميع جوانب الشخصية، الفردية تهتم بالفرد والمجتمع معًا','الشاملة للأفراد، الفردية للمجتمع فقط','الشاملة للمدرسة، الفردية للأسرة'], ans:1, level:'vhard'},
+  {q:'وظيفة التطبيع الاجتماعي للتربية تعني:', opts:['ضبط سلوك الطفل بالعقاب','جعل الأعضاء الجدد يكتسبون الصفات الإنسانية ويندمجون في الحياة الاجتماعية','نقل العادات القديمة','تعليم الحرف اليدوية'], ans:1, level:'vhard'},
+  {q:'ما التربية التي تربط الطفل بجمال الطبيعة منذ الصغر حتى يشبوا في ألفة الجمال؟', opts:['البيئية','الجسمية','الجمالية','الاجتماعية'], ans:2, level:'vhard'},
+  {q:'لماذا تعتبر التربية الأسرية "النواة الأولى للإنسان"؟', opts:['لأنها أقدم المؤسسات','لأن الأسرة هي أول بيئة يعيش فيها الطفل وتشكل شخصيته الهادئة أو المضطربة','لأنها تعلم القراءة','لأنها مسؤولة عن الصحة فقط'], ans:1, level:'vhard'},
+  {q:'أيهم يمثل عيبًا في التربية المتساهلة؟', opts:['كثرة القواعد','غياب التوجيه مما يعرض الطفل للفشل الأكاديمي والاجتماعي','الإفراط في العقاب','الصرامة الزائدة'], ans:1, level:'vhard'},
+  {q:'ما المقصود بالتراث الثقافي في سياق وظائف التربية؟', opts:['الفنون التشكيلية فقط','مجموع المعارف والمهارات والاتجاهات التي تشكل نمطًا للحياة عبر الأجيال','الأموال والممتلكات','اللغة فقط'], ans:1, level:'vhard'},
+  {q:'التربية تعمل على "التكيف الاجتماعي" بطريقتين، هما:', opts:['التعليم والتدريب','تغيير البيئة لتناسب الفرد أو تغيير الفرد لمناسبة البيئة','العقاب والمكافأة','الحفظ والتطبيق'], ans:1, level:'vhard'},
+  {q:'من الفيلسوف الذي يرى أن التربية الجمالية أساسها الأخلاق والطهارة والفضيلة؟', opts:['أفلاطون','روسو','أرسطو','ديكارت'], ans:2, level:'vhard'},
+  {q:'ماريا منتسوري اهتمت في التربية الجمالية بـ:', opts:['الغناء فقط','تدريب عين الطفل على الجمال والنظافة والنظام وسماع الموسيقى','الرياضة','القراءة والكتابة فقط'], ans:1, level:'vhard'},
+  {q:'أيهم ليس من أسباب تهميش ذوي الاحتياجات الخاصة اجتماعيًا؟', opts:['قلة الدخل','انخفاض التحصيل العلمي','تفوقهم الرياضي','المجتمع المحيط الذي يعيقهم أحيانًا بدون قصد'], ans:2, level:'vhard'},
+  {q:'ما العلاقة بين قدرة الإدراك العقلي والإحساس الجمالي عند ديكارت؟', opts:['لا علاقة بينهما','كلما ارتقى الإدراك العقلي كلما ارتقى الإحساس الجمالي','العكس صحيح','الجمال لا يرتبط بالعقل'], ans:1, level:'vhard'},
+  {q:'التربية الخلقية تبدأ بـ:', opts:['المدرسة الابتدائية','سنوات العمر الأولى في الأسرة','المرحلة الثانوية','الجامعة'], ans:1, level:'vhard'},
+  {q:'أفلاطون في كتاب الجمهورية طالب بتربية الأطفال جماليًا من خلال:', opts:['الدراسة الأكاديمية فقط','إحاطتهم بالأنغام الجميلة وتوظيف الفنون المسموعة والمرئية والحركية','العقاب على سوء الذوق','الرياضة البدنية'], ans:1, level:'vhard'},
+  {q:'ما الفرق بين الحاجات الفطرية والحاجات المكتسبة للطفل؟', opts:['لا فرق','الفطرية بيولوجية (طعام، نوم..) والمكتسبة تتشكل بالتعليم والتدريب (حب المعرفة، الحب)','الفطرية اجتماعية والمكتسبة جسدية','الفطرية للكبار فقط'], ans:1, level:'vhard'},
+  {q:'لماذا يختلف مفهوم التربية من مجتمع لآخر؟', opts:['بسبب الفوارق الاقتصادية فقط','لأن التربية نظام اجتماعي ينبع من فلسفة المجتمع وثقافته واتجاهاته المختلفة','بسبب اختلاف المناخ','لا يختلف'], ans:1, level:'vhard'},
+];
+
+// ===== RENDER FUNCTIONS =====
+function renderTF() {
+  const container = document.getElementById('tf-quiz');
+  container.innerHTML = tfQuestions.map((q, i) => `
+    <div class="q-card" id="tf-${i}">
+      <div class="q-num">سؤال ${i+1} من 25</div>
+      <span class="q-level ${q.level}">${levelLabel(q.level)}</span>
+      <div class="q-text">${q.q}</div>
+      <div class="tf-buttons">
+        <button class="tf-btn true-btn" onclick="checkTF(${i}, true)">✅ صح</button>
+        <button class="tf-btn false-btn" onclick="checkTF(${i}, false)">❌ غلط</button>
+      </div>
+      <div class="answer-reveal" id="tf-ans-${i}">
+        ${q.ans ? '✅ الإجابة: صح' : '❌ الإجابة: غلط'}
+      </div>
+    </div>
+  `).join('');
+}
+
+function checkTF(i, chosen) {
+  const q = tfQuestions[i];
+  const trueBtn = document.querySelector(`#tf-${i} .true-btn`);
+  const falseBtn = document.querySelector(`#tf-${i} .false-btn`);
+  trueBtn.disabled = true; falseBtn.disabled = true;
+  if (chosen === q.ans) {
+    (chosen ? trueBtn : falseBtn).classList.add('correct');
+  } else {
+    (chosen ? trueBtn : falseBtn).classList.add('wrong');
+    (q.ans ? trueBtn : falseBtn).classList.add('correct');
+  }
+  document.getElementById(`tf-ans-${i}`).classList.add('show');
+}
+
+function renderMC() {
+  const container = document.getElementById('mc-quiz');
+  container.innerHTML = mcQuestions.map((q, i) => `
+    <div class="q-card" id="mc-${i}">
+      <div class="q-num">سؤال ${i+1} من 25</div>
+      <span class="q-level ${q.level}">${levelLabel(q.level)}</span>
+      <div class="q-text">${q.q}</div>
+      <div class="mc-options">
+        ${q.opts.map((opt, j) => `<button class="mc-opt" onclick="checkMC(${i}, ${j})">${String.fromCharCode(65+j)}. ${opt}</button>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function checkMC(qi, chosen) {
+  const q = mcQuestions[qi];
+  const opts = document.querySelectorAll(`#mc-${qi} .mc-opt`);
+  opts.forEach((opt, j) => {
+    opt.disabled = true;
+    if (j === q.ans) opt.classList.add('correct-ans');
+    else if (j === chosen && chosen !== q.ans) opt.classList.add('wrong-ans');
+  });
+}
+
+function renderEssay() {
+  const container = document.getElementById('essay-quiz');
+  container.innerHTML = essayQuestions.map((q, i) => `
+    <div class="essay-q" id="eq-${i}">
+      <div class="q-num">سؤال مقالي ${i+1} من 10</div>
+      <span class="q-level ${q.level}">${levelLabel(q.level)}</span>
+      <div class="q-text">📝 ${q.q}</div>
+      <button class="show-ans-btn" onclick="showEssayAns(${i})">🔍 اظهر الإجابة النموذجية</button>
+      <div class="answer-reveal" id="eq-ans-${i}">
+        <strong>الإجابة النموذجية:</strong><br>${q.ans}
+      </div>
+    </div>
+  `).join('');
+}
+
+function showEssayAns(i) {
+  document.getElementById(`eq-ans-${i}`).classList.add('show');
+}
+
+function renderBonus() {
+  const container = document.getElementById('bonus-quiz');
+  container.innerHTML = `<div class="info-box purple" style="margin-bottom:16px;"><h3>🟣 قسم التحدي — 25 سؤال صعب جدًا!</h3><p>هذه أصعب الأسئلة في الفصل. خصصة لمن يريد درجة الامتياز!</p></div>` +
+  bonusQuestions.map((q, i) => `
+    <div class="q-card" id="bq-${i}">
+      <div class="q-num">تحدي ${i+1} من 25</div>
+      <span class="q-level vhard">🟣 صعب جدًا</span>
+      <div class="q-text">🔥 ${q.q}</div>
+      <div class="mc-options">
+        ${q.opts.map((opt, j) => `<button class="mc-opt" onclick="checkBonus(${i}, ${j})">${String.fromCharCode(65+j)}. ${opt}</button>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function checkBonus(qi, chosen) {
+  const q = bonusQuestions[qi];
+  const opts = document.querySelectorAll(`#bq-${qi} .mc-opt`);
+  opts.forEach((opt, j) => {
+    opt.disabled = true;
+    if (j === q.ans) opt.classList.add('correct-ans');
+    else if (j === chosen && chosen !== q.ans) opt.classList.add('wrong-ans');
+  });
+}
+
+function levelLabel(l) {
+  const map = {easy:'🟢 سهل', medium:'🟡 متوسط', hard:'🔴 صعب', vhard:'🟣 صعب جدًا'};
+  return map[l] || l;
+}
+
+// INIT
+renderTF();
+renderMC();
+renderEssay();
+renderBonus();
+</script>
+</body>
+</html>
